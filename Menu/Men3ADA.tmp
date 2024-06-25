@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://dpj681ulysng"]
+
+[ext_resource type="PackedScene" uid="uid://b0lqbvwq4blbb" path="res://Menu/BG_Objects/animated_flake.tscn" id="1_8lnvk"]
+[ext_resource type="Script" path="res://Menu/BG_Objects/Scripts/animated_flake.gd" id="2_dlbft"]
+
+[sub_resource type="Gradient" id="Gradient_jor43"]
+colors = PackedColorArray(0, 0, 0, 1, 0.226707, 0.226707, 0.226707, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4btg2"]
+gradient = SubResource("Gradient_jor43")
+fill_from = Vector2(0.206422, 0.807339)
+
+[sub_resource type="Curve2D" id="Curve2D_dwd6r"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -469, -318, 0, 0, 0, 0, -464, -301, 0, 0, 0, 0, -473, -290, 0, 0, 0, 0, -480, -273, 0, 0, 0, 0, -495, -259, 0, 0, 0, 0, -509, -236, 0, 0, 0, 0, -515, -223, 0, 0, 0, 0, -515, -208, 0, 0, 0, 0, -505, -194, 0, 0, 0, 0, -493, -184, 0, 0, 0, 0, -491, -159, 0, 0, 0, 0, -489, -98, 0, 0, 0, 0, -501, -81, 0, 0, 0, 0, -507, -71, 0, 0, 0, 0, -500, -62, 0, 0, 0, 0, -487, -56, 0, 0, 0, 0, -474, -49, 0, 0, 0, 0, -460, -39, 0, 0, 0, 0, -455, -25, 0, 0, 0, 0, -465, -9, 0, 0, 0, 0, -491, 13, 0, 0, 0, 0, -494, 35, 0, 0, 0, 0, -498, 68, 0, 0, 0, 0, -492, 89, 0, 0, 0, 0, -476, 99, 0, 0, 0, 0, -460, 102, 0, 0, 0, 0, -443, 94, 0, 0, 0, 0, -450, 73, 0, 0, 0, 0, -465, 67, 0, 0, 0, 0, -476, 75, 0, 0, 0, 0, -486, 104, 0, 0, 0, 0, -487, 124, 0, 0, 0, 0, -488, 156, 0, 0, 0, 0, -486, 188, 0, 0, 0, 0, -486, 206, 0, 0, 0, 0, -494, 223, 0, 0, 0, 0, -513, 219, 0, 0, 0, 0, -527, 201, 0, 0, 0, 0, -541, 189, 0, 0, 0, 0, -546, 195, 0, 0, 0, 0, -546, 203, 0, 0, 0, 0, -541, 211, 0, 0, 0, 0, -534, 219, 0, 0, 0, 0, -525, 228, 0, 0, 0, 0, -524, 236, 0, 0, 0, 0, -521, 253, 0, 0, 0, 0, -520, 255, 0, 0, 0, 0, -513, 264, 0, 0, 0, 0, -510, 279, 0, 0, 0, 0, -510, 292, 0, 0, 0, 0, -510, 305, 0, 0, 0, 0, -510, 321, 0, 0, 0, 0, -510, 329)
+}
+point_count = 53
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1.99998)
+scale = Vector2(18.0625, 10.1875)
+texture = SubResource("GradientTexture2D_4btg2")
+
+[node name="BG_Spawner 1" type="Node2D" parent="."]
+
+[node name="Path2D" type="Path2D" parent="BG_Spawner 1"]
+curve = SubResource("Curve2D_dwd6r")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="BG_Spawner 1/Path2D"]
+position = Vector2(-469, -318)
+rotation = 1.28474
+
+[node name="Animated_Flake" parent="BG_Spawner 1/Path2D/PathFollow2D" instance=ExtResource("1_8lnvk")]
+position = Vector2(0.282166, -0.959351)
+rotation = -1.28474
+scale = Vector2(0.16, 0.16)
+script = ExtResource("2_dlbft")

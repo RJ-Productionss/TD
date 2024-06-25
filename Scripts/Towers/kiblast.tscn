@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c88a11xdjao1s"]
+
+[ext_resource type="Texture2D" uid="uid://dcgim5m123ln7" path="res://Images/Towers/bullets/Ki.png" id="1_4fdmu"]
+[ext_resource type="Script" path="res://Scripts/Towers/kiblast.gd" id="1_d7m7p"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_et1ma"]
+radius = 4.0
+height = 14.0
+
+[node name="Kiblast" type="CharacterBody2D"]
+script = ExtResource("1_d7m7p")
+
+[node name="Ki" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_4fdmu")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_et1ma")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

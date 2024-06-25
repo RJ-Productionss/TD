@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0lqbvwq4blbb"]
+
+[sub_resource type="Gradient" id="Gradient_utyla"]
+colors = PackedColorArray(0.351563, 0.351563, 0.351563, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g6reg"]
+gradient = SubResource("Gradient_utyla")
+fill_from = Vector2(0.311927, 0.752294)
+
+[node name="Animated_Flake" type="CharacterBody2D"]
+
+[node name="Flake" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_g6reg")

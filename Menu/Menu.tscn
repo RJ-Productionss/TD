@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://dpj681ulysng"]
+
+[ext_resource type="PackedScene" uid="uid://bxt6d0is2rxil" path="res://Menu/BG_Objects/flakes.tscn" id="1_ujth1"]
+[ext_resource type="Texture2D" uid="uid://batcss7y22bv5" path="res://Images/Menu/start.png" id="3_ladl3"]
+[ext_resource type="Script" path="res://Menu/Scripts/Timer.gd" id="3_t35qc"]
+[ext_resource type="Texture2D" uid="uid://d0tcsxqerepis" path="res://Images/Menu/Log.png" id="4_2o151"]
+
+[sub_resource type="Gradient" id="Gradient_jor43"]
+colors = PackedColorArray(0, 0, 0, 1, 0.226707, 0.226707, 0.226707, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4btg2"]
+gradient = SubResource("Gradient_jor43")
+fill_from = Vector2(0.206422, 0.807339)
+
+[sub_resource type="SystemFont" id="SystemFont_d4rp6"]
+font_weight = 125
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1.99998)
+scale = Vector2(18.0625, 10.1875)
+texture = SubResource("GradientTexture2D_4btg2")
+
+[node name="Flakes" parent="." instance=ExtResource("1_ujth1")]
+
+[node name="Timer" type="Timer" parent="Flakes"]
+wait_time = 6.0
+autostart = true
+script = ExtResource("3_t35qc")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -268.0
+offset_top = -265.0
+offset_right = -228.0
+offset_bottom = -225.0
+
+[node name="Button" type="Button" parent="UI"]
+layout_mode = 2
+offset_left = 136.0
+offset_top = 398.0
+offset_right = 394.0
+offset_bottom = 506.0
+theme_override_fonts/font = SubResource("SystemFont_d4rp6")
+theme_override_font_sizes/font_size = 1
+icon = ExtResource("3_ladl3")
+icon_alignment = 1
+vertical_icon_alignment = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="UI"]
+position = Vector2(266, 90)
+texture = ExtResource("4_2o151")
+
+[connection signal="timeout" from="Flakes/Timer" to="Flakes/Timer" method="_on_timeout"]

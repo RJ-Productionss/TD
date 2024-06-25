@@ -1,0 +1,746 @@
+[gd_scene load_steps=14 format=3 uid="uid://bxt6d0is2rxil"]
+
+[ext_resource type="PackedScene" uid="uid://b0lqbvwq4blbb" path="res://Menu/BG_Objects/animated_flake.tscn" id="1_6bvwa"]
+[ext_resource type="Script" path="res://Menu/BG_Objects/Scripts/Destroy.gd" id="1_mrsex"]
+[ext_resource type="Script" path="res://Menu/BG_Objects/Scripts/animated_flake.gd" id="2_8tnfh"]
+
+[sub_resource type="Curve2D" id="Curve2D_dwd6r"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -469, -318, 0, 0, 0, 0, -464, -301, 0, 0, 0, 0, -473, -290, 0, 0, 0, 0, -480, -273, 0, 0, 0, 0, -495, -259, 0, 0, 0, 0, -500.214, -251.102, 0, 0, 0, 0, -509, -236, 0, 0, 0, 0, -515, -223, 0, 0, 0, 0, -515, -208, 0, 0, 0, 0, -505, -194, 0, 0, 0, 0, -494, -184, 0, 0, 0, 0, -491, -159, 0, 0, 0, 0, -489, -98, 0, 0, 0, 0, -501, -81, 0, 0, 0, 0, -507, -71, 0, 0, 0, 0, -500, -62, 0, 0, 0, 0, -487, -56, 0, 0, 0, 0, -474, -49, 0, 0, 0, 0, -460, -39, 0, 0, 0, 0, -455, -25, 0, 0, 0, 0, -465, -9, 0, 0, 0, 0, -491, 13, 0, 0, 0, 0, -494, 35, 0, 0, 0, 0, -498, 68, 0, 0, 0, 0, -492, 89, 0, 0, 0, 0, -476, 99, 0, 0, 0, 0, -460, 102, 0, 0, 0, 0, -443, 94, 0, 0, 0, 0, -450, 73, 0, 0, 0, 0, -465, 67, 0, 0, 0, 0, -476, 75, 0, 0, 0, 0, -486, 104, 0, 0, 0, 0, -487, 124, 0, 0, 0, 0, -488, 156, 0, 0, 0, 0, -486, 188, 0, 0, 0, 0, -486, 206, 0, 0, 0, 0, -494, 223, 0, 0, 0, 0, -513, 219, 0, 0, 0, 0, -527, 201, 0, 0, 0, 0, -541, 189, 0, 0, 0, 0, -546, 195, 0, 0, 0, 0, -546, 203, 0, 0, 0, 0, -541, 211, 0, 0, 0, 0, -534, 219, 0, 0, 0, 0, -525, 228, 0, 0, 0, 0, -524, 236, 0, 0, 0, 0, -521, 253, 0, 0, 0, 0, -520, 255, 0, 0, 0, 0, -513, 264, 0, 0, 0, 0, -510, 279, 0, 0, 0, 0, -510, 292, 0, 0, 0, 0, -510, 305, 0, 0, 0, 0, -510, 321, 0, 0, 0, 0, -510, 329)
+}
+point_count = 54
+
+[sub_resource type="Curve2D" id="Curve2D_q3eo7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -476, -324, 0, 0, 0, 0, -467, -313, 0, 0, 0, 0, -467, -304, 0, 0, 0, 0, -468, -294, 0, 0, 0, 0, -473, -287, 0, 0, 0, 0, -483, -276, 0, 0, 0, 0, -490, -263, 0, 0, 0, 0, -494, -258, 0, 0, 0, 0, -503, -253, 0, 0, 0, 0, -507, -246, 0, 0, 0, 0, -511, -240, 0, 0, 0, 0, -514, -232, 0, 0, 0, 0, -515, -221, 0, 0, 0, 0, -518, -208, 0, 0, 0, 0, -517, -200, 0, 0, 0, 0, -515, -192, 0, 0, 0, 0, -513, -184, 0, 0, 0, 0, -508, -172, 0, 0, 0, 0, -504, -166, 0, 0, 0, 0, -502, -163, 0, 0, 0, 0, -500, -155, 0, 0, 0, 0, -501, -152, 0, 0, 0, 0, -505, -146, 0, 0, 0, 0, -512, -144, 0, 0, 0, 0, -520, -139, 0, 0, 0, 0, -531, -131, 0, 0, 0, 0, -536, -128, 0, 0, 0, 0, -543, -116, 0, 0, 0, 0, -542, -112, 0, 0, 0, 0, -543, -102, 0, 0, 0, 0, -550, -98, 0, 0, 0, 0, -554, -96, 0, 0, 0, 0, -555, -88, 0, 0, 0, 0, -550, -77, 0, 0, 0, 0, -539, -67, 0, 0, 0, 0, -523, -60, 0, 0, 0, 0, -511, -51, 0, 0, 0, 0, -517, -44, 0, 0, 0, 0, -516, -31, 0, 0, 0, 0, -518, -18, 0, 0, 0, 0, -508, 5, 0, 0, 0, 0, -499, 20, 0, 0, 0, 0, -496, 22, 0, 0, 0, 0, -492, 31, 0, 0, 0, 0, -484, 36, 0, 0, 0, 0, -474, 40, 0, 0, 0, 0, -466, 38, 0, 0, 0, 0, -463, 35, 0, 0, 0, 0, -458, 26, 0, 0, 0, 0, -457, 13, 0, 0, 0, 0, -465, 4, 0, 0, 0, 0, -469, 3, 0, 0, 0, 0, -473, 11, 0, 0, 0, 0, -473, 20, 0, 0, 0, 0, -469, 56, 0, 0, 0, 0, -468, 78, 0, 0, 0, 0, -468, 95, 0, 0, 0, 0, -471, 118, 0, 0, 0, 0, -478, 122, 0, 0, 0, 0, -488, 124, 0, 0, 0, 0, -498, 130, 0, 0, 0, 0, -500, 142, 0, 0, 0, 0, -504, 150, 0, 0, 0, 0, -513, 156, 0, 0, 0, 0, -520, 168, 0, 0, 0, 0, -514, 184, 0, 0, 0, 0, -507, 200, 0, 0, 0, 0, -498, 211, 0, 0, 0, 0, -495, 226, 0, 0, 0, 0, -501, 241, 0, 0, 0, 0, -506, 241, 0, 0, 0, 0, -512, 241, 0, 0, 0, 0, -522, 233, 0, 0, 0, 0, -536, 234, 0, 0, 0, 0, -534, 249, 0, 0, 0, 0, -523, 261, 0, 0, 0, 0, -510, 276, 0, 0, 0, 0, -505, 290, 0, 0, 0, 0, -502, 305, 0, 0, 0, 0, -499, 317, 0, 0, 0, 0, -499, 326, 0, 0, 0, 0, -499, 331)
+}
+point_count = 82
+
+[sub_resource type="Curve2D" id="Curve2D_ub3v8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -479, -473, 0, 0, 0, 0, -467, -313, 0, 0, 0, 0, -467, -304, 0, 0, 0, 0, -468, -294, 0, 0, 0, 0, -473, -287, 0, 0, 0, 0, -483, -276, 0, 0, 0, 0, -490, -263, 0, 0, 0, 0, -494, -258, 0, 0, 0, 0, -503, -253, 0, 0, 0, 0, -507, -246, 0, 0, 0, 0, -511, -240, 0, 0, 0, 0, -514, -232, 0, 0, 0, 0, -515, -221, 0, 0, 0, 0, -518, -208, 0, 0, 0, 0, -517, -200, 0, 0, 0, 0, -515, -192, 0, 0, 0, 0, -513, -184, 0, 0, 0, 0, -508, -172, 0, 0, 0, 0, -504, -166, 0, 0, 0, 0, -502, -163, 0, 0, 0, 0, -500, -155, 0, 0, 0, 0, -501, -152, 0, 0, 0, 0, -505, -146, 0, 0, 0, 0, -512, -144, 0, 0, 0, 0, -520, -139, 0, 0, 0, 0, -531, -131, 0, 0, 0, 0, -536, -128, 0, 0, 0, 0, -543, -116, 0, 0, 0, 0, -542, -112, 0, 0, 0, 0, -543, -102, 0, 0, 0, 0, -550, -98, 0, 0, 0, 0, -554, -96, 0, 0, 0, 0, -555, -88, 0, 0, 0, 0, -550, -77, 0, 0, 0, 0, -539, -67, 0, 0, 0, 0, -523, -60, 0, 0, 0, 0, -511, -51, 0, 0, 0, 0, -517, -44, 0, 0, 0, 0, -516, -31, 0, 0, 0, 0, -518, -18, 0, 0, 0, 0, -508, 5, 0, 0, 0, 0, -499, 20, 0, 0, 0, 0, -496, 22, 0, 0, 0, 0, -492, 31, 0, 0, 0, 0, -484, 36, 0, 0, 0, 0, -474, 40, 0, 0, 0, 0, -466, 38, 0, 0, 0, 0, -463, 35, 0, 0, 0, 0, -458, 26, 0, 0, 0, 0, -457, 13, 0, 0, 0, 0, -465, 4, 0, 0, 0, 0, -469, 3, 0, 0, 0, 0, -473, 11, 0, 0, 0, 0, -473, 20, 0, 0, 0, 0, -469, 56, 0, 0, 0, 0, -468, 78, 0, 0, 0, 0, -468, 95, 0, 0, 0, 0, -471, 118, 0, 0, 0, 0, -478, 122, 0, 0, 0, 0, -488, 124, 0, 0, 0, 0, -498, 130, 0, 0, 0, 0, -500, 142, 0, 0, 0, 0, -504, 150, 0, 0, 0, 0, -513, 156, 0, 0, 0, 0, -520, 168, 0, 0, 0, 0, -514, 184, 0, 0, 0, 0, -507, 200, 0, 0, 0, 0, -498, 211, 0, 0, 0, 0, -495, 226, 0, 0, 0, 0, -501, 241, 0, 0, 0, 0, -506, 241, 0, 0, 0, 0, -512, 241, 0, 0, 0, 0, -522, 233, 0, 0, 0, 0, -536, 234, 0, 0, 0, 0, -534, 249, 0, 0, 0, 0, -523, 261, 0, 0, 0, 0, -510, 276, 0, 0, 0, 0, -505, 290, 0, 0, 0, 0, -502, 305, 0, 0, 0, 0, -499, 317, 0, 0, 0, 0, -499, 326, 0, 0, 0, 0, -499, 331)
+}
+point_count = 82
+
+[sub_resource type="Curve2D" id="Curve2D_vp1dq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -570, -328, 0, 0, 0, 0, -567, -321, 0, 0, 0, 0, -565, -303, 0, 0, 0, 0, -570, -292, 0, 0, 0, 0, -572, -285, 0, 0, 0, 0, -581, -281, 0, 0, 0, 0, -589, -277, 0, 0, 0, 0, -592, -271, 0, 0, 0, 0, -592, -259, 0, 0, 0, 0, -595, -252, 0, 0, 0, 0, -593, -242, 0, 0, 0, 0, -590, -237, 0, 0, 0, 0, -583, -228, 0, 0, 0, 0, -581, -218, 0, 0, 0, 0, -584, -207, 0, 0, 0, 0, -586, -193, 0, 0, 0, 0, -589, -186, 0, 0, 0, 0, -591, -169, 0, 0, 0, 0, -584, -162, 0, 0, 0, 0, -578, -151, 0, 0, 0, 0, -574, -132, 0, 0, 0, 0, -584, -120, 0, 0, 0, 0, -591, -103, 0, 0, 0, 0, -582, -95, 0, 0, 0, 0, -572, -88, 0, 0, 0, 0, -573, -76, 0, 0, 0, 0, -575, -67, 0, 0, 0, 0, -583, -60, 0, 0, 0, 0, -600, -42, 0, 0, 0, 0, -608, -51, 0, 0, 0, 0, -616, -60, 0, 0, 0, 0, -621, -61, 0, 0, 0, 0, -610, -64, 0, 0, 0, 0, -612, -47, 0, 0, 0, 0, -612, -35, 0, 0, 0, 0, -608, -29, 0, 0, 0, 0, -599, -23, 0, 0, 0, 0, -597, -20, 0, 0, 0, 0, -591, -12, 0, 0, 0, 0, -588, 0, 0, 0, 0, 0, -592, 4, 0, 0, 0, 0, -589, 21, 0, 0, 0, 0, -585, 26, 0, 0, 0, 0, -577, 33, 0, 0, 0, 0, -570, 51, 0, 0, 0, 0, -568, 63, 0, 0, 0, 0, -555, 81, 0, 0, 0, 0, -549, 89, 0, 0, 0, 0, -552, 101, 0, 0, 0, 0, -556, 105, 0, 0, 0, 0, -575, 124, 0, 0, 0, 0, -593, 137, 0, 0, 0, 0, -594, 149, 0, 0, 0, 0, -600, 175, 0, 0, 0, 0, -604, 178, 0, 0, 0, 0, -613, 187, 0, 0, 0, 0, -603, 199, 0, 0, 0, 0, -602, 209, 0, 0, 0, 0, -607, 213, 0, 0, 0, 0, -625, 214, 0, 0, 0, 0, -627, 212, 0, 0, 0, 0, -640, 213, 0, 0, 0, 0, -641, 230, 0, 0, 0, 0, -636, 239, 0, 0, 0, 0, -629, 253, 0, 0, 0, 0, -621, 270, 0, 0, 0, 0, -617, 288, 0, 0, 0, 0, -618, 308, 0, 0, 0, 0, -619, 321, 0, 0, 0, 0, -620, 330, 0, 0, 0, 0, -620, 339)
+}
+point_count = 71
+
+[sub_resource type="Curve2D" id="Curve2D_g7lds"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -590, -356, 0, 0, 0, 0, -591, -333, 0, 0, 0, 0, -586, -319, 0, 0, 0, 0, -567, -321, 0, 0, 0, 0, -565, -303, 0, 0, 0, 0, -570, -292, 0, 0, 0, 0, -572, -285, 0, 0, 0, 0, -581, -281, 0, 0, 0, 0, -589, -277, 0, 0, 0, 0, -592, -271, 0, 0, 0, 0, -592, -259, 0, 0, 0, 0, -595, -252, 0, 0, 0, 0, -593, -242, 0, 0, 0, 0, -590, -237, 0, 0, 0, 0, -583, -228, 0, 0, 0, 0, -581, -218, 0, 0, 0, 0, -584, -207, 0, 0, 0, 0, -586, -193, 0, 0, 0, 0, -589, -186, 0, 0, 0, 0, -591, -169, 0, 0, 0, 0, -584, -162, 0, 0, 0, 0, -578, -151, 0, 0, 0, 0, -574, -132, 0, 0, 0, 0, -584, -120, 0, 0, 0, 0, -591, -103, 0, 0, 0, 0, -582, -95, 0, 0, 0, 0, -572, -88, 0, 0, 0, 0, -573, -76, 0, 0, 0, 0, -575, -67, 0, 0, 0, 0, -583, -60, 0, 0, 0, 0, -600, -42, 0, 0, 0, 0, -608, -51, 0, 0, 0, 0, -616, -60, 0, 0, 0, 0, -621, -61, 0, 0, 0, 0, -610, -64, 0, 0, 0, 0, -612, -47, 0, 0, 0, 0, -612, -35, 0, 0, 0, 0, -608, -29, 0, 0, 0, 0, -599, -23, 0, 0, 0, 0, -597, -20, 0, 0, 0, 0, -591, -12, 0, 0, 0, 0, -588, 0, 0, 0, 0, 0, -592, 4, 0, 0, 0, 0, -589, 21, 0, 0, 0, 0, -585, 26, 0, 0, 0, 0, -577, 33, 0, 0, 0, 0, -570, 51, 0, 0, 0, 0, -568, 63, 0, 0, 0, 0, -555, 81, 0, 0, 0, 0, -549, 89, 0, 0, 0, 0, -552, 101, 0, 0, 0, 0, -556, 105, 0, 0, 0, 0, -575, 124, 0, 0, 0, 0, -593, 137, 0, 0, 0, 0, -594, 149, 0, 0, 0, 0, -600, 175, 0, 0, 0, 0, -604, 178, 0, 0, 0, 0, -613, 187, 0, 0, 0, 0, -603, 199, 0, 0, 0, 0, -602, 209, 0, 0, 0, 0, -607, 213, 0, 0, 0, 0, -625, 214, 0, 0, 0, 0, -627, 212, 0, 0, 0, 0, -640, 213, 0, 0, 0, 0, -641, 230, 0, 0, 0, 0, -636, 239, 0, 0, 0, 0, -629, 253, 0, 0, 0, 0, -621, 270, 0, 0, 0, 0, -617, 288, 0, 0, 0, 0, -618, 308, 0, 0, 0, 0, -619, 321, 0, 0, 0, 0, -620, 330, 0, 0, 0, 0, -620, 339)
+}
+point_count = 73
+
+[sub_resource type="Curve2D" id="Curve2D_c3j6r"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -334, -351, 0, 0, 0, 0, -335, -323, 0, 0, 0, 0, -348, -311, 0, 0, 0, 0, -356, -290, 0, 0, 0, 0, -357, -267, 0, 0, 0, 0, -353, -241, 0, 0, 0, 0, -344, -216, 0, 0, 0, 0, -334, -192, 0, 0, 0, 0, -337, -170, 0, 0, 0, 0, -352, -146, 0, 0, 0, 0, -367, -117, 0, 0, 0, 0, -371, -80, 0, 0, 0, 0, -383, -51, 0, 0, 0, 0, -407, -40, 0, 0, 0, 0, -433, -58, 0, 0, 0, 0, -451, -45, 0, 0, 0, 0, -443, -14, 0, 0, 0, 0, -424, 6, 0, 0, 0, 0, -397, 26, 0, 0, 0, 0, -388, 51, 0, 0, 0, 0, -384, 85, 0, 0, 0, 0, -389, 115, 0, 0, 0, 0, -393, 167, 0, 0, 0, 0, -419, 183, 0, 0, 0, 0, -445, 198, 0, 0, 0, 0, -448, 222, 0, 0, 0, 0, -438, 235, 0, 0, 0, 0, -465, 246, 0, 0, 0, 0, -477, 232, 0, 0, 0, 0, -485, 248, 0, 0, 0, 0, -485, 263, 0, 0, 0, 0, -458, 278, 0, 0, 0, 0, -438, 292, 0, 0, 0, 0, -433, 312, 0, 0, 0, 0, -433, 323, 0, 0, 0, 0, -433, 330, 0, 0, 0, 0, -437, 344)
+}
+point_count = 37
+
+[sub_resource type="Curve2D" id="Curve2D_b671a"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -260, -339, 0, 0, 0, 0, -282, -309, 0, 0, 0, 0, -268, -264, 0, 0, 0, 0, -262, -236, 0, 0, 0, 0, -277, -207, 0, 0, 0, 0, -290, -193, 0, 0, 0, 0, -283, -155, 0, 0, 0, 0, -266, -131, 0, 0, 0, 0, -260, -112, 0, 0, 0, 0, -256, -86, 0, 0, 0, 0, -258, -52, 0, 0, 0, 0, -275, -21, 0, 0, 0, 0, -294, -14, 0, 0, 0, 0, -323, -21, 0, 0, 0, 0, -351, -37, 0, 0, 0, 0, -361, -19, 0, 0, 0, 0, -357, 7, 0, 0, 0, 0, -350, 27, 0, 0, 0, 0, -325, 53, 0, 0, 0, 0, -297, 70, 0, 0, 0, 0, -279, 95, 0, 0, 0, 0, -276, 120, 0, 0, 0, 0, -285, 141, 0, 0, 0, 0, -296, 165, 0, 0, 0, 0, -320, 182, 0, 0, 0, 0, -335, 190, 0, 0, 0, 0, -339, 190, 0, 0, 0, 0, -354, 214, 0, 0, 0, 0, -352, 225, 0, 0, 0, 0, -381, 243, 0, 0, 0, 0, -389, 239, 0, 0, 0, 0, -404, 222, 0, 0, 0, 0, -422, 246, 0, 0, 0, 0, -405, 262, 0, 0, 0, 0, -390, 276, 0, 0, 0, 0, -363, 278, 0, 0, 0, 0, -361, 297, 0, 0, 0, 0, -372, 310, 0, 0, 0, 0, -390, 328, 0, 0, 0, 0, -378, 365)
+}
+point_count = 40
+
+[sub_resource type="Curve2D" id="Curve2D_ehfvm"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -335, -429, 0, 0, 0, 0, -335, -323, 0, 0, 0, 0, -348, -311, 0, 0, 0, 0, -356, -290, 0, 0, 0, 0, -357, -267, 0, 0, 0, 0, -353, -241, 0, 0, 0, 0, -344, -216, 0, 0, 0, 0, -334, -192, 0, 0, 0, 0, -337, -170, 0, 0, 0, 0, -352, -146, 0, 0, 0, 0, -367, -117, 0, 0, 0, 0, -371, -80, 0, 0, 0, 0, -383, -51, 0, 0, 0, 0, -407, -40, 0, 0, 0, 0, -433, -58, 0, 0, 0, 0, -451, -45, 0, 0, 0, 0, -443, -14, 0, 0, 0, 0, -424, 6, 0, 0, 0, 0, -397, 26, 0, 0, 0, 0, -388, 51, 0, 0, 0, 0, -384, 85, 0, 0, 0, 0, -389, 115, 0, 0, 0, 0, -393, 167, 0, 0, 0, 0, -419, 183, 0, 0, 0, 0, -445, 198, 0, 0, 0, 0, -448, 222, 0, 0, 0, 0, -438, 235, 0, 0, 0, 0, -465, 246, 0, 0, 0, 0, -477, 232, 0, 0, 0, 0, -485, 248, 0, 0, 0, 0, -485, 263, 0, 0, 0, 0, -458, 278, 0, 0, 0, 0, -438, 292, 0, 0, 0, 0, -433, 312, 0, 0, 0, 0, -433, 323, 0, 0, 0, 0, -433, 330, 0, 0, 0, 0, -437, 344)
+}
+point_count = 37
+
+[sub_resource type="Curve2D" id="Curve2D_7o3hk"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -206, -442, 0, 0, 0, 0, -235, -345, 0, 0, 0, 0, -282, -309, 0, 0, 0, 0, -268, -264, 0, 0, 0, 0, -262, -236, 0, 0, 0, 0, -277, -207, 0, 0, 0, 0, -290, -193, 0, 0, 0, 0, -283, -155, 0, 0, 0, 0, -266, -131, 0, 0, 0, 0, -260, -112, 0, 0, 0, 0, -256, -86, 0, 0, 0, 0, -258, -52, 0, 0, 0, 0, -275, -21, 0, 0, 0, 0, -294, -14, 0, 0, 0, 0, -323, -21, 0, 0, 0, 0, -351, -37, 0, 0, 0, 0, -361, -19, 0, 0, 0, 0, -357, 7, 0, 0, 0, 0, -350, 27, 0, 0, 0, 0, -325, 53, 0, 0, 0, 0, -297, 70, 0, 0, 0, 0, -279, 95, 0, 0, 0, 0, -276, 120, 0, 0, 0, 0, -285, 141, 0, 0, 0, 0, -296, 165, 0, 0, 0, 0, -320, 182, 0, 0, 0, 0, -335, 190, 0, 0, 0, 0, -339, 190, 0, 0, 0, 0, -354, 214, 0, 0, 0, 0, -352, 225, 0, 0, 0, 0, -381, 243, 0, 0, 0, 0, -389, 239, 0, 0, 0, 0, -404, 222, 0, 0, 0, 0, -422, 246, 0, 0, 0, 0, -405, 262, 0, 0, 0, 0, -390, 276, 0, 0, 0, 0, -363, 278, 0, 0, 0, 0, -361, 297, 0, 0, 0, 0, -372, 310, 0, 0, 0, 0, -390, 328, 0, 0, 0, 0, -378, 365)
+}
+point_count = 41
+
+[sub_resource type="Curve2D" id="Curve2D_cqmk2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -469, -318, 0, 0, 0, 0, -464, -301, 0, 0, 0, 0, -473, -290, 0, 0, 0, 0, -480, -273, 0, 0, 0, 0, -495, -259, 0, 0, 0, 0, -500.214, -251.102, 0, 0, 0, 0, -509, -236, 0, 0, 0, 0, -515, -223, 0, 0, 0, 0, -515, -208, 0, 0, 0, 0, -505, -194, 0, 0, 0, 0, -494, -184, 0, 0, 0, 0, -491, -159, 0, 0, 0, 0, -489, -98, 0, 0, 0, 0, -501, -81, 0, 0, 0, 0, -507, -71, 0, 0, 0, 0, -500, -62, 0, 0, 0, 0, -487, -56, 0, 0, 0, 0, -474, -49, 0, 0, 0, 0, -460, -39, 0, 0, 0, 0, -455, -25, 0, 0, 0, 0, -465, -9, 0, 0, 0, 0, -491, 13, 0, 0, 0, 0, -494, 35, 0, 0, 0, 0, -498, 68, 0, 0, 0, 0, -492, 89, 0, 0, 0, 0, -476, 99, 0, 0, 0, 0, -460, 102, 0, 0, 0, 0, -443, 94, 0, 0, 0, 0, -450, 73, 0, 0, 0, 0, -465, 67, 0, 0, 0, 0, -476, 75, 0, 0, 0, 0, -486, 104, 0, 0, 0, 0, -487, 124, 0, 0, 0, 0, -488, 156, 0, 0, 0, 0, -486, 188, 0, 0, 0, 0, -486, 206, 0, 0, 0, 0, -494, 223, 0, 0, 0, 0, -513, 219, 0, 0, 0, 0, -527, 201, 0, 0, 0, 0, -541, 189, 0, 0, 0, 0, -546, 195, 0, 0, 0, 0, -546, 203, 0, 0, 0, 0, -541, 211, 0, 0, 0, 0, -534, 219, 0, 0, 0, 0, -525, 228, 0, 0, 0, 0, -524, 236, 0, 0, 0, 0, -521, 253, 0, 0, 0, 0, -520, 255, 0, 0, 0, 0, -513, 264, 0, 0, 0, 0, -510, 279, 0, 0, 0, 0, -510, 292, 0, 0, 0, 0, -510, 305, 0, 0, 0, 0, -510, 321, 0, 0, 0, 0, -510, 329, 0, 0, 0, 0, -513, 342, 0, 0, 0, 0, -534, 360, 0, 0, 0, 0, -527, 407, 0, 0, 0, 0, -495, 443)
+}
+point_count = 58
+
+[node name="Flakes" type="Node2D"]
+
+[node name="BG_Spawner 1" type="Node2D" parent="."]
+
+[node name="Path2D" type="Path2D" parent="BG_Spawner 1"]
+curve = SubResource("Curve2D_dwd6r")
+script = ExtResource("1_mrsex")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="BG_Spawner 1/Path2D"]
+position = Vector2(-469, -318)
+rotation = 1.28474
+rotates = false
+
+[node name="Animated_Flake" parent="BG_Spawner 1/Path2D/PathFollow2D" instance=ExtResource("1_6bvwa")]
+position = Vector2(0.282166, -0.959351)
+rotation = -1.28474
+scale = Vector2(0.16, 0.16)
+script = ExtResource("2_8tnfh")
+
+[node name="_Timer_55367" type="Timer" parent="BG_Spawner 1/Path2D/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_76268" type="Timer" parent="BG_Spawner 1/Path2D/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="BG_Spawner 2" type="Node2D" parent="."]
+
+[node name="Path2D 1" type="Path2D" parent="BG_Spawner 2"]
+position = Vector2(160, 0)
+curve = SubResource("Curve2D_q3eo7")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="BG_Spawner 2/Path2D 1"]
+position = Vector2(-476, -324)
+rotation = 1.28474
+rotates = false
+
+[node name="Animated_Flake" parent="BG_Spawner 2/Path2D 1/PathFollow2D" instance=ExtResource("1_6bvwa")]
+position = Vector2(0.282166, -0.959351)
+rotation = -1.28474
+scale = Vector2(0.16, 0.16)
+script = ExtResource("2_8tnfh")
+
+[node name="_Timer_55367" type="Timer" parent="BG_Spawner 2/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_57538" type="Timer" parent="BG_Spawner 2/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_76269" type="Timer" parent="BG_Spawner 2/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="BG_Spawner 17" type="Node2D" parent="."]
+position = Vector2(694, -1)
+
+[node name="Path2D 1" type="Path2D" parent="BG_Spawner 17"]
+position = Vector2(160, 0)
+curve = SubResource("Curve2D_q3eo7")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="BG_Spawner 17/Path2D 1"]
+position = Vector2(-476, -324)
+rotation = 1.28474
+rotates = false
+
+[node name="Animated_Flake" parent="BG_Spawner 17/Path2D 1/PathFollow2D" instance=ExtResource("1_6bvwa")]
+position = Vector2(0.282166, -0.959351)
+rotation = -1.28474
+scale = Vector2(0.16, 0.16)
+script = ExtResource("2_8tnfh")
+
+[node name="_Timer_55367" type="Timer" parent="BG_Spawner 17/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_57538" type="Timer" parent="BG_Spawner 17/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_76269" type="Timer" parent="BG_Spawner 17/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_136448" type="Timer" parent="BG_Spawner 17/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="BG_Spawner 9" type="Node2D" parent="."]
+position = Vector2(438, -1)
+
+[node name="Path2D 1" type="Path2D" parent="BG_Spawner 9"]
+position = Vector2(160, 0)
+curve = SubResource("Curve2D_ub3v8")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="BG_Spawner 9/Path2D 1"]
+position = Vector2(-479, -473)
+rotation = 1.28474
+rotates = false
+
+[node name="Animated_Flake" parent="BG_Spawner 9/Path2D 1/PathFollow2D" instance=ExtResource("1_6bvwa")]
+position = Vector2(0.282166, -0.959351)
+rotation = -1.28474
+scale = Vector2(0.16, 0.16)
+script = ExtResource("2_8tnfh")
+
+[node name="_Timer_55367" type="Timer" parent="BG_Spawner 9/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_57538" type="Timer" parent="BG_Spawner 9/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_76269" type="Timer" parent="BG_Spawner 9/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_90829" type="Timer" parent="BG_Spawner 9/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="BG_Spawner 3" type="Node2D" parent="."]
+position = Vector2(34, 15)
+
+[node name="Path2D 1" type="Path2D" parent="BG_Spawner 3"]
+position = Vector2(160, 0)
+curve = SubResource("Curve2D_vp1dq")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="BG_Spawner 3/Path2D 1"]
+position = Vector2(-570, -328)
+rotation = 1.28474
+rotates = false
+
+[node name="Animated_Flake" parent="BG_Spawner 3/Path2D 1/PathFollow2D" instance=ExtResource("1_6bvwa")]
+position = Vector2(0.282166, -0.959351)
+rotation = -1.28474
+scale = Vector2(0.16, 0.16)
+script = ExtResource("2_8tnfh")
+
+[node name="_Timer_55367" type="Timer" parent="BG_Spawner 3/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_57538" type="Timer" parent="BG_Spawner 3/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_63275" type="Timer" parent="BG_Spawner 3/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_76270" type="Timer" parent="BG_Spawner 3/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="BG_Spawner 8" type="Node2D" parent="."]
+position = Vector2(589, 27)
+
+[node name="Path2D 1" type="Path2D" parent="BG_Spawner 8"]
+position = Vector2(160, 0)
+curve = SubResource("Curve2D_g7lds")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="BG_Spawner 8/Path2D 1"]
+position = Vector2(-590, -356)
+rotation = 1.28474
+rotates = false
+
+[node name="Animated_Flake" parent="BG_Spawner 8/Path2D 1/PathFollow2D" instance=ExtResource("1_6bvwa")]
+position = Vector2(0.282166, -0.959351)
+rotation = -1.28474
+scale = Vector2(0.16, 0.16)
+script = ExtResource("2_8tnfh")
+
+[node name="_Timer_55367" type="Timer" parent="BG_Spawner 8/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_57538" type="Timer" parent="BG_Spawner 8/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_63275" type="Timer" parent="BG_Spawner 8/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_76270" type="Timer" parent="BG_Spawner 8/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_84446" type="Timer" parent="BG_Spawner 8/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="BG_Spawner 16" type="Node2D" parent="."]
+position = Vector2(706, 37)
+
+[node name="Path2D 1" type="Path2D" parent="BG_Spawner 16"]
+position = Vector2(160, 0)
+curve = SubResource("Curve2D_g7lds")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="BG_Spawner 16/Path2D 1"]
+position = Vector2(-590, -356)
+rotation = 1.28474
+rotates = false
+
+[node name="Animated_Flake" parent="BG_Spawner 16/Path2D 1/PathFollow2D" instance=ExtResource("1_6bvwa")]
+position = Vector2(0.282166, -0.959351)
+rotation = -1.28474
+scale = Vector2(0.16, 0.16)
+script = ExtResource("2_8tnfh")
+
+[node name="_Timer_55367" type="Timer" parent="BG_Spawner 16/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_57538" type="Timer" parent="BG_Spawner 16/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_63275" type="Timer" parent="BG_Spawner 16/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_76270" type="Timer" parent="BG_Spawner 16/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_84446" type="Timer" parent="BG_Spawner 16/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_135741" type="Timer" parent="BG_Spawner 16/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="BG_Spawner 7" type="Node2D" parent="."]
+position = Vector2(382, 0)
+
+[node name="Path2D 1" type="Path2D" parent="BG_Spawner 7"]
+position = Vector2(160, 0)
+curve = SubResource("Curve2D_vp1dq")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="BG_Spawner 7/Path2D 1"]
+position = Vector2(-570, -328)
+rotation = 1.28474
+rotates = false
+
+[node name="Animated_Flake" parent="BG_Spawner 7/Path2D 1/PathFollow2D" instance=ExtResource("1_6bvwa")]
+position = Vector2(0.282166, -0.959351)
+rotation = -1.28474
+scale = Vector2(0.16, 0.16)
+script = ExtResource("2_8tnfh")
+
+[node name="_Timer_55367" type="Timer" parent="BG_Spawner 7/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_57538" type="Timer" parent="BG_Spawner 7/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_63275" type="Timer" parent="BG_Spawner 7/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_76270" type="Timer" parent="BG_Spawner 7/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_82324" type="Timer" parent="BG_Spawner 7/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="BG_Spawner 4" type="Node2D" parent="."]
+
+[node name="Path2D 1" type="Path2D" parent="BG_Spawner 4"]
+position = Vector2(160, 0)
+curve = SubResource("Curve2D_c3j6r")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="BG_Spawner 4/Path2D 1"]
+position = Vector2(-334, -351)
+rotation = 1.28474
+rotates = false
+
+[node name="Animated_Flake" parent="BG_Spawner 4/Path2D 1/PathFollow2D" instance=ExtResource("1_6bvwa")]
+position = Vector2(0.282166, -0.959351)
+rotation = -1.28474
+scale = Vector2(0.16, 0.16)
+script = ExtResource("2_8tnfh")
+
+[node name="_Timer_55367" type="Timer" parent="BG_Spawner 4/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_57538" type="Timer" parent="BG_Spawner 4/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_63275" type="Timer" parent="BG_Spawner 4/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_64354" type="Timer" parent="BG_Spawner 4/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_76271" type="Timer" parent="BG_Spawner 4/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="BG_Spawner 12" type="Node2D" parent="."]
+position = Vector2(254, 16)
+
+[node name="Path2D 1" type="Path2D" parent="BG_Spawner 12"]
+position = Vector2(160, 0)
+curve = SubResource("Curve2D_vp1dq")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="BG_Spawner 12/Path2D 1"]
+position = Vector2(-570, -328)
+rotation = 1.28474
+rotates = false
+
+[node name="Animated_Flake" parent="BG_Spawner 12/Path2D 1/PathFollow2D" instance=ExtResource("1_6bvwa")]
+position = Vector2(0.282166, -0.959351)
+rotation = -1.28474
+scale = Vector2(0.16, 0.16)
+script = ExtResource("2_8tnfh")
+
+[node name="_Timer_55367" type="Timer" parent="BG_Spawner 12/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_57538" type="Timer" parent="BG_Spawner 12/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_63275" type="Timer" parent="BG_Spawner 12/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_76270" type="Timer" parent="BG_Spawner 12/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_99795" type="Timer" parent="BG_Spawner 12/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="BG_Spawner 18" type="Node2D" parent="."]
+position = Vector2(829, -13)
+
+[node name="Path2D 1" type="Path2D" parent="BG_Spawner 18"]
+position = Vector2(160, 0)
+curve = SubResource("Curve2D_vp1dq")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="BG_Spawner 18/Path2D 1"]
+position = Vector2(-570, -328)
+rotation = 1.28474
+rotates = false
+
+[node name="Animated_Flake" parent="BG_Spawner 18/Path2D 1/PathFollow2D" instance=ExtResource("1_6bvwa")]
+position = Vector2(0.282166, -0.959351)
+rotation = -1.28474
+scale = Vector2(0.16, 0.16)
+script = ExtResource("2_8tnfh")
+
+[node name="_Timer_55367" type="Timer" parent="BG_Spawner 18/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_57538" type="Timer" parent="BG_Spawner 18/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_63275" type="Timer" parent="BG_Spawner 18/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_76270" type="Timer" parent="BG_Spawner 18/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_99795" type="Timer" parent="BG_Spawner 18/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_137864" type="Timer" parent="BG_Spawner 18/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="BG_Spawner 13" type="Node2D" parent="."]
+position = Vector2(923, 32)
+
+[node name="Path2D 1" type="Path2D" parent="BG_Spawner 13"]
+position = Vector2(160, 0)
+curve = SubResource("Curve2D_g7lds")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="BG_Spawner 13/Path2D 1"]
+position = Vector2(-590, -356)
+rotation = 1.28474
+rotates = false
+
+[node name="Animated_Flake" parent="BG_Spawner 13/Path2D 1/PathFollow2D" instance=ExtResource("1_6bvwa")]
+position = Vector2(0.282166, -0.959351)
+rotation = -1.28474
+scale = Vector2(0.16, 0.16)
+script = ExtResource("2_8tnfh")
+
+[node name="_Timer_55367" type="Timer" parent="BG_Spawner 13/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_57538" type="Timer" parent="BG_Spawner 13/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_63275" type="Timer" parent="BG_Spawner 13/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_76270" type="Timer" parent="BG_Spawner 13/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_84446" type="Timer" parent="BG_Spawner 13/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_99796" type="Timer" parent="BG_Spawner 13/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="BG_Spawner 14" type="Node2D" parent="."]
+position = Vector2(885, 5)
+
+[node name="Path2D 1" type="Path2D" parent="BG_Spawner 14"]
+position = Vector2(160, 0)
+curve = SubResource("Curve2D_vp1dq")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="BG_Spawner 14/Path2D 1"]
+position = Vector2(-570, -328)
+rotation = 1.28474
+rotates = false
+
+[node name="Animated_Flake" parent="BG_Spawner 14/Path2D 1/PathFollow2D" instance=ExtResource("1_6bvwa")]
+position = Vector2(0.282166, -0.959351)
+rotation = -1.28474
+scale = Vector2(0.16, 0.16)
+script = ExtResource("2_8tnfh")
+
+[node name="_Timer_55367" type="Timer" parent="BG_Spawner 14/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_57538" type="Timer" parent="BG_Spawner 14/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_63275" type="Timer" parent="BG_Spawner 14/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_76270" type="Timer" parent="BG_Spawner 14/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_82324" type="Timer" parent="BG_Spawner 14/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_99797" type="Timer" parent="BG_Spawner 14/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="BG_Spawner 15" type="Node2D" parent="."]
+position = Vector2(626, 37)
+
+[node name="Path2D 1" type="Path2D" parent="BG_Spawner 15"]
+position = Vector2(160, 0)
+curve = SubResource("Curve2D_c3j6r")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="BG_Spawner 15/Path2D 1"]
+position = Vector2(-334, -351)
+rotation = 1.28474
+rotates = false
+
+[node name="Animated_Flake" parent="BG_Spawner 15/Path2D 1/PathFollow2D" instance=ExtResource("1_6bvwa")]
+position = Vector2(0.282166, -0.959351)
+rotation = -1.28474
+scale = Vector2(0.16, 0.16)
+script = ExtResource("2_8tnfh")
+
+[node name="_Timer_55367" type="Timer" parent="BG_Spawner 15/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_57538" type="Timer" parent="BG_Spawner 15/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_63275" type="Timer" parent="BG_Spawner 15/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_64354" type="Timer" parent="BG_Spawner 15/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_76271" type="Timer" parent="BG_Spawner 15/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_99798" type="Timer" parent="BG_Spawner 15/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="BG_Spawner 5" type="Node2D" parent="."]
+position = Vector2(-95, 16)
+
+[node name="Path2D 1" type="Path2D" parent="BG_Spawner 5"]
+position = Vector2(160, 0)
+curve = SubResource("Curve2D_b671a")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="BG_Spawner 5/Path2D 1"]
+position = Vector2(-260, -339)
+rotation = 1.28474
+rotates = false
+
+[node name="Animated_Flake" parent="BG_Spawner 5/Path2D 1/PathFollow2D" instance=ExtResource("1_6bvwa")]
+position = Vector2(0.282166, -0.959351)
+rotation = -1.28474
+scale = Vector2(0.16, 0.16)
+script = ExtResource("2_8tnfh")
+
+[node name="_Timer_55367" type="Timer" parent="BG_Spawner 5/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_57538" type="Timer" parent="BG_Spawner 5/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_63275" type="Timer" parent="BG_Spawner 5/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_64354" type="Timer" parent="BG_Spawner 5/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_73378" type="Timer" parent="BG_Spawner 5/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_76272" type="Timer" parent="BG_Spawner 5/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="BG_Spawner 10" type="Node2D" parent="."]
+position = Vector2(238, 0)
+
+[node name="Path2D 1" type="Path2D" parent="BG_Spawner 10"]
+position = Vector2(160, 0)
+curve = SubResource("Curve2D_ehfvm")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="BG_Spawner 10/Path2D 1"]
+position = Vector2(-335, -429)
+rotation = 1.28474
+rotates = false
+
+[node name="Animated_Flake" parent="BG_Spawner 10/Path2D 1/PathFollow2D" instance=ExtResource("1_6bvwa")]
+position = Vector2(0.282166, -0.959351)
+rotation = -1.28474
+scale = Vector2(0.16, 0.16)
+script = ExtResource("2_8tnfh")
+
+[node name="_Timer_55367" type="Timer" parent="BG_Spawner 10/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_57538" type="Timer" parent="BG_Spawner 10/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_63275" type="Timer" parent="BG_Spawner 10/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_64354" type="Timer" parent="BG_Spawner 10/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_76271" type="Timer" parent="BG_Spawner 10/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_95938" type="Timer" parent="BG_Spawner 10/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="BG_Spawner 11" type="Node2D" parent="."]
+position = Vector2(238, 0)
+
+[node name="Path2D 1" type="Path2D" parent="BG_Spawner 11"]
+position = Vector2(160, 0)
+curve = SubResource("Curve2D_7o3hk")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="BG_Spawner 11/Path2D 1"]
+position = Vector2(-206, -442)
+rotation = 1.28474
+rotates = false
+
+[node name="Animated_Flake" parent="BG_Spawner 11/Path2D 1/PathFollow2D" instance=ExtResource("1_6bvwa")]
+position = Vector2(0.282166, -0.959351)
+rotation = -1.28474
+scale = Vector2(0.16, 0.16)
+script = ExtResource("2_8tnfh")
+
+[node name="_Timer_55367" type="Timer" parent="BG_Spawner 11/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_57538" type="Timer" parent="BG_Spawner 11/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_63275" type="Timer" parent="BG_Spawner 11/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_64354" type="Timer" parent="BG_Spawner 11/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_73378" type="Timer" parent="BG_Spawner 11/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_76272" type="Timer" parent="BG_Spawner 11/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_95939" type="Timer" parent="BG_Spawner 11/Path2D 1/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="BG_Spawner 6" type="Node2D" parent="."]
+position = Vector2(699, -42)
+
+[node name="Path2D" type="Path2D" parent="BG_Spawner 6"]
+curve = SubResource("Curve2D_cqmk2")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="BG_Spawner 6/Path2D"]
+position = Vector2(-469, -318)
+rotation = 1.28474
+rotates = false
+
+[node name="Animated_Flake" parent="BG_Spawner 6/Path2D/PathFollow2D" instance=ExtResource("1_6bvwa")]
+position = Vector2(0.282166, -0.959351)
+rotation = -1.28474
+scale = Vector2(0.16, 0.16)
+script = ExtResource("2_8tnfh")
+
+[node name="_Timer_55367" type="Timer" parent="BG_Spawner 6/Path2D/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_76268" type="Timer" parent="BG_Spawner 6/Path2D/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_78762" type="Timer" parent="BG_Spawner 6/Path2D/PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="tree_exiting" from="BG_Spawner 1/Path2D" to="BG_Spawner 1/Path2D" method="_on_tree_exiting"]
+[connection signal="child_exiting_tree" from="BG_Spawner 1/Path2D/PathFollow2D" to="BG_Spawner 1/Path2D" method="_on_path_follow_2d_child_exiting_tree"]
